@@ -1298,6 +1298,7 @@ grpc_cc_library(
         "grpc_client_channel",
         "grpc_resolver_fake",
         "grpclb_proto",
+        "upb_lib",
     ],
 )
 
@@ -1325,7 +1326,38 @@ grpc_cc_library(
         "grpc_resolver_fake",
         "grpc_secure",
         "grpclb_proto",
+        "upb_lib",
     ],
+)
+
+grpc_cc_library(
+    name = "upb_lib",
+    srcs = [
+        "upb/upb.c",
+        "upb/def.c",
+        "upb/sink.c",
+        "upb/refcounted.c",
+        "upb/handlers.c",
+        "upb/msg.c",
+        "upb/table.c",
+        "upb/encode.c",
+        "upb/decode.c",
+    ],
+    hdrs = [
+        "upb/upb.h",
+        "upb/def.h",
+        "upb/sink.h",
+        "upb/structs.int.h",
+        "upb/structdefs.int.h",
+        "upb/refcounted.h",
+        "upb/handlers.h",
+        "upb/handlers-inl.h",
+        "upb/msg.h",
+        "upb/table.int.h",
+        "upb/encode.h",
+        "upb/decode.h",
+    ],
+    language = "c++",
 )
 
 grpc_cc_library(
